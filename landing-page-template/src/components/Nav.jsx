@@ -1,10 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const MenuItems = ["Item1", "Item2", "Item3", "Item4"];
 
 const Nav = () => {
+  const [show, setShow] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY) {
+        setShow(false); // on descend => cacher la navbar
+      } else {
+        setShow(true); // on monte => montrer la navbar
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   return (
-    <>
+    <div
+      className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300 bg-white ${
+        show ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div className="w-full flex justify-between items-center px-12 shadow-2xl">
         {/* Logo */}
         <div className="max-w-60">
@@ -31,7 +56,7 @@ const Nav = () => {
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
