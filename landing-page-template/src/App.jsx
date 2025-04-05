@@ -14,9 +14,7 @@ function App() {
         <section className="snap-start h-screen">
           <About />
         </section>
-        <section className="snap-start h-screen">
-          <About />
-        </section>
+
       </div>
     </>
   );
