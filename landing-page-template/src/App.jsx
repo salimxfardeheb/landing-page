@@ -2,6 +2,7 @@ import "./App.css";
 import Hero from "./Hero";
 import Nav from "./components/Nav";
 import About from "./components/About";
+import Section from "./components/Section";
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
         <section className="snap-start h-screen">
           <About />
         </section>
-
+        <section className="snap-start h-screen">
+          <Section />
+        </section>
       </div>
     </>
   );
