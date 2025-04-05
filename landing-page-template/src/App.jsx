@@ -4,6 +4,7 @@ import Nav from "./components/Nav";
 import About from "./components/About";
 import Section from "./components/Section";
 import Contact from "./components/Contact"
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
         </section>
         <section className="snap-start h-screen">
           <Contact />
+        </section>
+        <section className="snap-start">
+          <Footer />
         </section>
       </div>
     </>
