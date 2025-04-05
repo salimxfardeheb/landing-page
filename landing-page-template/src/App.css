@@ -3,3 +3,7 @@
 .taille {
     @apply min-w-screen h-screen;
 }
+
+.data-form {
+    @apply w-full p-3 rounded-lg mb-4 bg-blue-100 placeholder:text-gray-600 text-black;
+}

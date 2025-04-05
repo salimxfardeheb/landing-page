@@ -3,6 +3,7 @@ import Hero from "./Hero";
 import Nav from "./components/Nav";
 import About from "./components/About";
 import Section from "./components/Section";
+import Contact from "./components/Contact"
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
         </section>
         <section className="snap-start h-screen">
           <Section />
+        </section>
+        <section className="snap-start h-screen">
+          <Contact />
         </section>
       </div>
     </>
