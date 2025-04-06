@@ -45,14 +45,14 @@ const Hero = () => {
         {/* CONTENU TEXTE */}
         <div className="w-1/2 flex flex-col justify-center items-center p-4 absolute top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2 gap-10">
           <img src="/example-logo.png" alt="logo" />
-          <div className="text-center text-4xl font-bold font-stretch-extra-condensed">
+          <div className="text-center md:text-4xl font-bold font-stretch-extra-condensed ">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci
             suscipit numquam nobis unde accusantium? Amet, a labore expedita,
             ullam quaerat eveniet, et ut modi non magni cumque fuga pariatur
             minima.
           </div>
-          <button className="bg-blue-500 text-white px-6 py-4 rounded-lg shadow-md hover:bg-blue-400 text-xl font-bold cursor-pointer flex justify-center items-center gap-2">
-          <IoInformationCircleOutline className="text-4xl" />
+          <button className="bg-blue-500 text-white px-6 py-4 rounded-lg shadow-md hover:bg-blue-400 md:text-xl font-bold cursor-pointer flex justify-center items-center gap-2">
+          <IoInformationCircleOutline className="md:text-4xl" />
             En savoir plus
           </button>
         </div>

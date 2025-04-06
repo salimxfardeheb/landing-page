@@ -1,62 +1,63 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const MenuItems = ["Item1", "Item2", "Item3", "Item4"];
 
 const Nav = () => {
-  const [show, setShow] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > lastScrollY) {
-        setShow(false); // on descend => cacher la navbar
-      } else {
-        setShow(true); // on monte => montrer la navbar
-      }
-
-      setLastScrollY(currentScrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div
-      className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300 bg-white ${
-        show ? "translate-y-0" : "-translate-y-full"
-      }`}
-    >
-      <div className="w-full flex justify-between items-center px-12 shadow-2xl">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
+      <div className="flex justify-between items-center px-6 md:px-12 py-4">
         {/* Logo */}
         <div className="max-w-60">
-          <img src="/example-logo.png" alt="logo" />
+          <img src="/example-logo.png" alt="logo" className="h-10" />
         </div>
-        <div className="flex items-center gap-20">
-          {/* Menu Items */}
-          <div>
-            <ul className="flex justify-between items-center gap-8">
-              {MenuItems.map((data, index) => {
-                return (
-                  <li key={index}>
-                    <a href="#" className="text-xl hover:opacity-65">
-                      {data}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-          {/*button contact */}
+
+        {/* Burger Icon (mobile only) */}
+        <div className="md:hidden">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-3xl focus:outline-none"
+          >
+            {isOpen ? "✕" : "☰"}
+          </button>
+        </div>
+
+        {/* Menu (desktop only) */}
+        <div className="hidden md:flex items-center gap-20">
+          <ul className="flex gap-8">
+            {MenuItems.map((item, index) => (
+              <li key={index}>
+                <a href="#" className="text-xl hover:opacity-65">
+                  {item}
+                </a>
+              </li>
+            ))}
+          </ul>
           <button className="bg-blue-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-400 text-lg">
             Contact
           </button>
         </div>
       </div>
-    </div>
+
+      {/* Mobile Menu (visible only when open) */}
+      {isOpen && (
+        <div className="md:hidden px-6 pb-4">
+          <ul className="flex flex-col gap-4">
+            {MenuItems.map((item, index) => (
+              <li key={index}>
+                <a href="#" className="text-lg block hover:opacity-65">
+                  {item}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <button className="mt-4 w-full bg-blue-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-400 text-lg">
+            Contact
+          </button>
+        </div>
+      )}
+    </nav>
   );
 };
 

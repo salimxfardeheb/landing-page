@@ -1,5 +1,5 @@
 import "./App.css";
-import Hero from "./Hero";
+import Hero from "./components/Hero";
 import Nav from "./components/Nav";
 import About from "./components/About";
 import Section from "./components/Section";
@@ -14,7 +14,7 @@ function App() {
         <section className="snap-start h-screen">
           <Hero />
         </section>
-        <section className="snap-start h-screen">
+        <section className="snap-start h-screen md:px-12">
           <About />
         </section>
         <section className="snap-start h-screen">

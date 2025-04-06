@@ -2,11 +2,11 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="h-screen w-full flex justify-center items-center gap-16">
-      <div className="max-w-1/4">
+    <div className="h-screen w-full flex justify-center items-center gap-16 md:flex-row flex-col">
+      <div className="md:max-w-1/4 max-w-1/2">
         <img src="/about.png" alt="" srcset="" />
       </div>
-      <div className="flex flex-col">
+      <div className="flex flex-col justify-center items-center text-center p-4 ">
         <p className="text-3xl font-semibold text-blue-700">
           Qui sommes nous ?
         </p>
