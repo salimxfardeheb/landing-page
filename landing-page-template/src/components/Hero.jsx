@@ -53,7 +53,7 @@ const Hero = () => {
           </div>
           <button className="bg-blue-500 text-white px-6 py-4 rounded-lg shadow-md hover:bg-blue-400 md:text-xl font-bold cursor-pointer flex justify-center items-center gap-2">
           <IoInformationCircleOutline className="md:text-4xl" />
-            En savoir plus
+            Learn More
           </button>
         </div>
       </div>

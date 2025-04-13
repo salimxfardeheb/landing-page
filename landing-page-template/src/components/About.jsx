@@ -8,7 +8,7 @@ const About = () => {
       </div>
       <div className="flex flex-col justify-center items-center text-center p-4 ">
         <p className="text-3xl font-semibold text-blue-700">
-          Qui sommes nous ?
+          About Us
         </p>
         <p class="text-gray-700 mt-4 max-w-2xl mx-auto">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero qui
